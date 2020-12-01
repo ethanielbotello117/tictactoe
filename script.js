@@ -42,9 +42,11 @@ function select1() {
     if (b1s == "empty") {
         if (i % 2 == 0) {
             document.getElementById('box1').innerHTML = 'O';
+            b1s = "takenByO"
             document.getElementById('turnDisplayer').innerHTML = "It's player 1's turn!"
         } else {
             document.getElementById('box1').innerHTML = 'X';
+            b1s = "takenByX"
             document.getElementById('turnDisplayer').innerHTML = "It's player 2's turn!"
         }
         i++;
@@ -52,9 +54,10 @@ function select1() {
     } else if (b1s == "taken") {
         console.log("item already placed");
     }
-    //(box1status)
-    b1s = "taken";
-    console.log(b1s)
+    // //(box1status)
+    // b1s = "taken";
+    // console.log(b1s)
+    winner()
 }
 function select2() {
     if (b2s == "empty") {
@@ -63,6 +66,7 @@ function select2() {
             document.getElementById('turnDisplayer').innerHTML = "It's player 1's turn!"
         } else {
             document.getElementById('box2').innerHTML = 'X';
+            b2s = "takenByX"
             document.getElementById('turnDisplayer').innerHTML = "It's player 2's turn!"
         }
         i++;
@@ -71,8 +75,9 @@ function select2() {
         console.log("item already placed");
     }
     //(box1status)
-    b2s = "taken";
-    console.log(b2s)
+    // b2s = "taken";
+    // console.log(b2s)
+    winner()
 }
 function select3() {
     if (b3s == "empty") {
@@ -81,6 +86,7 @@ function select3() {
             document.getElementById('turnDisplayer').innerHTML = "It's player 1's turn!"
         } else {
             document.getElementById('box3').innerHTML = 'X';
+            b3s = "takenByX"
             document.getElementById('turnDisplayer').innerHTML = "It's player 2's turn!"
         }
         i++;
@@ -89,8 +95,9 @@ function select3() {
         console.log("item already placed");
     }
     //(box1status)
-    b3s = "taken";
-    console.log(b3s)
+    // b3s = "taken";
+    // console.log(b3s)
+    winner()
 }
 function select4() {
     if (b4s == "empty") {
@@ -198,7 +205,7 @@ function select9() {
     }
 
     if(i == 10){
-        document.getElementById('turnDisplayer').innerHTML = "winnner declared dumbass press the reset button"
+        document.getElementById('turnDisplayer').innerHTML = "winnner declared! press the reset button"
     }
     i = 1;
 }
@@ -209,6 +216,8 @@ function select9() {
 // reset button
 
 function reset() {
+
+    console.log(b1s)
     for (let bob = 1; bob <= 9; bob++) {
         document.getElementById(`box${bob}`).innerHTML = " ";
         b1s = "empty";
@@ -221,13 +230,16 @@ function reset() {
         b8s = "empty";
         b9s = "empty";
     }
+    document.getElementById('turnDisplayer').innerHTML = "It's player 1's turn"
             console.log("All cells reset")
-        console.log(b3s)
 }
+
+
 
 // winner declarer
 
-document.getElementById('box3').onclick
-
-console.log(b3s)
-
+function winner(){
+    if(b1s == "takenByX" && b2s == "takenByX" && b3s == "takenByX"){
+        alert("LETS GOOOOOO!!!")
+    }
+}
