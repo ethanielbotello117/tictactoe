@@ -1,29 +1,5 @@
 "use script"
 
-// player answer placers 
-
-// let i = 0;
-
-// function select1() {
-    // if (i % 2 == 0) {
-    //     if (document.getElementById('box1').innerHTML == 'X' || 'O') {
-    //         console.log("these aren't the droids we're looking for")
-    //     } else {
-    //         document.getElementById('box1').innerHTML = 'O';
-    //         document.getElementById('turnDisplayer').innerHTML = "It's player 2's turn!"
-    //         i++
-    //     }
-    // } else {
-    //     if (document.getElementById('box1').innerHTML == 'X' || 'O') {
-            
-    //     } else {
-    //         document.getElementById('box1').innerHTML = 'X';
-    //         document.getElementById('turnDisplayer').innerHTML = "It's player 1's turn!"
-    //         i++
-    //     }
-    // }
-    // console.log(i)
-
     let i = 1;
     let X = "X";
     let O = "O";
@@ -203,13 +179,7 @@ function select9() {
     } else if (b9s == "taken") {
         console.log("item already placed");
     }
-
-    if(i == 10){
-        document.getElementById('turnDisplayer').innerHTML = "winnner declared! press the reset button"
-    }
-    i = 1;
 }
-
 
 
 
@@ -241,5 +211,13 @@ function reset() {
 function winner(){
     if(b1s == "takenByX" && b2s == "takenByX" && b3s == "takenByX"){
         alert("LETS GOOOOOO!!!")
+    }else if(b1s == "takenByO" && b2s == "takenByO" && b3s == "takenByO"){
+
     }
 }
+
+if(i == 10){
+        document.getElementById('turnDisplayer').innerHTML = "winnner declared! press the reset button";
+        alert("plz work")
+        i = 1;
+    }
