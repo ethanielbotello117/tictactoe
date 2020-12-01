@@ -63,6 +63,7 @@ body{
     width: 115px;
     background-color: rgb(41, 224, 215);
     outline: none;
+    border-radius: 25%;
 }
 
 .line1{
