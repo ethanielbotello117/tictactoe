@@ -27,6 +27,7 @@ body{
     display: grid;
     grid-template-columns: 33% 33% 33%;
     grid-template-rows: 30% 70%;
+    font-family: 'Hind', sans-serif;
 }
 
 .s1{
@@ -96,4 +97,9 @@ body{
     color: white;
     text-align: center;
     font-size: 600%;
+}
+
+.leftText{
+    font-size: 35px;
+    text-transform: uppercase;
 }
