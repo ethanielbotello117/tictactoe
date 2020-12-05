@@ -30,16 +30,15 @@ function select1() {
     } else if (b1s == "taken") {
         console.log("item already placed");
     }
-    // //(box1status)
-    // b1s = "taken";
-    // console.log(b1s)
     winner()
+    noWinner()
 }
 function select2() {
     if (b2s == "empty") {
         if (i % 2 == 0) {
             document.getElementById('box2').innerHTML = 'O';
             document.getElementById('turnDisplayer').innerHTML = "It's player 1's turn!"
+            b2s = "takenByO"
         } else {
             document.getElementById('box2').innerHTML = 'X';
             b2s = "takenByX"
@@ -50,16 +49,15 @@ function select2() {
     } else if (b2s == "taken") {
         console.log("item already placed");
     }
-    //(box1status)
-    // b2s = "taken";
-    // console.log(b2s)
     winner()
+    noWinner()
 }
 function select3() {
     if (b3s == "empty") {
         if (i % 2 == 0) {
             document.getElementById('box3').innerHTML = 'O';
             document.getElementById('turnDisplayer').innerHTML = "It's player 1's turn!"
+            b3s = "takenByO"
         } else {
             document.getElementById('box3').innerHTML = 'X';
             b3s = "takenByX"
@@ -70,10 +68,8 @@ function select3() {
     } else if (b3s == "taken") {
         console.log("item already placed");
     }
-    //(box1status)
-    // b3s = "taken";
-    // console.log(b3s)
     winner()
+    noWinner()
 }
 function select4() {
     if (b4s == "empty") {
@@ -89,9 +85,10 @@ function select4() {
     } else if (b4s == "taken") {
         console.log("item already placed");
     }
-    //(box1status)
     b4s = "taken";
     console.log(b4s)
+    winner()
+    noWinner()
 }
 function select5() {
     if (b5s == "empty") {
@@ -107,9 +104,10 @@ function select5() {
     } else if (b5s == "taken") {
         console.log("item already placed");
     }
-    //(box1status)
     b5s = "taken";
     console.log(b5s)
+    winner()
+    noWinner()
 }
 function select6() {
     if (b6s == "empty") {
@@ -125,9 +123,10 @@ function select6() {
     } else if (b6s == "taken") {
         console.log("item already placed");
     }
-    //(box1status)
     b6s = "taken";
     console.log(b6s)
+    winner()
+    noWinner()
 }
 function select7() {
     if (b7s == "empty") {
@@ -143,9 +142,10 @@ function select7() {
     } else if (b7s == "taken") {
         console.log("item already placed");
     }
-    //(box1status)
     b7s = "taken";
     console.log(b7s)
+    winner()
+    noWinner()
 }
 function select8() {
     if (b8s == "empty") {
@@ -161,9 +161,10 @@ function select8() {
     } else if (b8s == "taken") {
         console.log("item already placed");
     }
-    //(box1status)
     b8s = "taken";
     console.log(b8s)
+    winner()
+    noWinner()
 }
 function select9() {
     if (b9s == "empty") {
@@ -179,6 +180,8 @@ function select9() {
     } else if (b9s == "taken") {
         console.log("item already placed");
     }
+    winner()
+    noWinner()
 }
 
 
@@ -200,6 +203,7 @@ function reset() {
         b8s = "empty";
         b9s = "empty";
     }
+    i = 1;
     document.getElementById('turnDisplayer').innerHTML = "It's player 1's turn"
             console.log("All cells reset")
 }
@@ -208,16 +212,20 @@ function reset() {
 
 // winner declarer
 
+let winnerCheck = 'none'
+
 function winner(){
     if(b1s == "takenByX" && b2s == "takenByX" && b3s == "takenByX"){
-        alert("LETS GOOOOOO!!!")
+    document.getElementById('turnDisplayer').textContent = "Player 1 Wins!!!"
+    winnerCheck = 'won'
     }else if(b1s == "takenByO" && b2s == "takenByO" && b3s == "takenByO"){
-
+    document.getElementById('turnDisplayer').textContent = "Player 2 Wins!!!"
+    winnerCheck = 'won'
     }
 }
 
-if(i == 10){
-        document.getElementById('turnDisplayer').innerHTML = "winnner declared! press the reset button";
-        alert("plz work")
-        i = 1;
+function noWinner(){
+    if(winnerCheck == 'none' && i == 10){
+        document.getElementById('turnDisplayer').innerHTML = "Its a draw :(";
     }
+}
